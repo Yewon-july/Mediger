@@ -1,0 +1,49 @@
+html
+    head
+        meta(name="viewpoint" content="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet' href='/main.css')
+          
+
+    - var date = new Date();
+    body
+        for alarm in alarms
+            .medicineName
+                .firstbox
+                    span.alignleft
+                        a(href="/medicines/").a2 <
+                    span.alignright
+                        img(src="/img/garbage.png")
+                    .clearboth
+                .secondbox
+                    .medicineName-name=alarm.scheName
+            .startDate
+            .startDateInner 시작일
+            .startDateBeforeHr
+            .hr
+            .startDateBox
+            .startDateReal=alarm.startDate
+            .startDateIntake
+            .intake 복용 방법
+            .startDateBox
+            .hr
+            .startDateBox
+
+            .startDateReal 매일
+            .startDateBox
+            - var time = alarm.scheHour + "시 " + alarm.scheMin +"분"
+            .startDateReal=time
+            .startDateBox
+            .startDateReal=alarm.dose
+            .startDateIntake
+            .intake 현재까지의 복용
+            .startDateBox
+            .hr
+            .startDateBox
+            for c in count
+                -cnt = c.cnt+"회"
+                .startDateReal=cnt
+            .startDate
+
+
+
+        include footer.pug

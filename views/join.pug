@@ -1,0 +1,21 @@
+doctype html
+head
+    title #{title}
+body
+    form(action="/join", method="post")
+        div
+            label Name
+            input(type="text", name="name")
+
+        div
+            label Birthday
+            input(type="date", name="birthDay")
+
+        div
+            label Sex
+            input(type="radio", name="sex", id="Male", value=0)
+            input(type="radio", name="sex", id="Female", value=1)
+        div 
+            label Submit
+            input(type="submit" value="Sign In")
+

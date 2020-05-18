@@ -1,0 +1,34 @@
+doctype html
+head
+    title Mediger
+    meta(name="viewpoint" content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet' href='/main.css')
+body(onload="window.resizeTo(642,341)")
+    include header.pug
+    div.firstGreyBox
+        div.profileIndex 이름
+            
+        div.profileInner=user.userName
+    .greyBox
+        .profileIndex 생년월일
+        .profileInner=user.birth
+    .greyBox
+        .profileIndex 성별
+        if !(user.sex)
+            - var sex = "남자"
+        if user.sex
+            - var sex = "여자"
+        .profileInner= sex
+
+    .greyBox
+        .profileIndex 보호자
+        if(user.accompanierName === null)
+            - var accompanier="없음"
+        if(user.accompanierName !== null)
+            -var accompanier = user.accompanierName+", "+user.accompanierPhone
+        .profileInner=accompanier
+
+    form(action="/user/edit", method="get")
+        input.Rectangle-132(type="submit", value="수정하기")
+    
+    include footer.pug

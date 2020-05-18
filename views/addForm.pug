@@ -1,0 +1,46 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name="viewpoint" content="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet' href='/main.css')
+        script.
+            mediCount=0;
+            timeCount=0;
+            function mediAppend(form){
+                mediCount = mediCount+1;
+                append = document.getElementById("appendmedi");
+                append.innerHTML += "<div class=medicineGreyBox> <div class=profileIndex> 약 이름"+ mediCount + "</div> <input class=addMedicineText type=text name=mediName></div><br>"
+                append.innerHTML += "<div class=medicineGreyBox> <div class=addMedicineIndex> 약 복용량"+ mediCount + "</div><input class=addMedicineText type=text name=dose></div><br>"
+
+            }
+            function timeAppend(form){
+                timeCount = timeCount+1;
+                append = document.getElementById("appendtime");
+                append.innerHTML += "<div class=medicineGreyBox> <div class=profileIndex>시간"+timeCount + "</div><input class=addMedicineText type=time name=time></div><br>"
+            }
+    body(onload="window.resizeTo(642,341)")
+        include header.pug
+        div#mediSubmit
+            form(action='/medicines/insert' method='POST')
+                div#mediInput2
+                    .firstGreyBox
+                        .profileIndex 알람 이름 
+                        input.addMedicineText(type="text", name="scheName")
+                    .greyBox
+                        .profileIndex 시작일 
+                        input.addMedicineText(type="date", name="startDate")
+                    .greyBox
+                        .profileIndex 종료일 
+                        input.addMedicineText(type="date", name="endDate")
+                    div#appendmedi
+                        .greyBox
+                            .profileIndex 약물
+                            input.profileButton(type="button", value="약물 추가", onclick="mediAppend(this.form)")
+                    div#appendtime
+                        .greyBox
+                            .profileIndex 시간
+                            input.profileButton(type="button", value="시간 추가", onclick="timeAppend(this.form)")
+                    input.Rectangle-132(type="submit", value="등록")
+        .footer
+            include footer.pug

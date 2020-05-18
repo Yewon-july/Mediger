@@ -1,0 +1,32 @@
+head
+    meta(name="viewpoint" content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet' href='/main.css')
+body
+    .rectangle-68
+    .rectangle-69
+        -path = "/calendar/" + date
+        a(href=path).a3 < 
+        .inputIntake 복용 입력
+    .hr
+
+    .alarms
+        form(action="/calendar/alarmRecord", method="POST")
+            for alarm in alarms
+                .mediNameSpace
+                .rectangle-69
+                    .mediName-inner=alarm.scheName
+                .rectangle-68
+                .rectangle-69
+                .center
+                    -var string=alarm.scheDate + " " + alarm.scheHour + "시 " + alarm.scheMin + "분";
+                    .nextToCalendarIcon=string
+                .bigSpace
+                .semiSpace
+                    input(type="button" class="imageButton1" value="")
+                    input(type="submit" class="imageButton3" value="")
+                    input#scheID(type="hidden" name="scheID" value=alarm.scheID)
+                    br
+                    .caption1 건너뜀
+                    .caption2 복용했음
+                .smallSpace
+        include footer.pug

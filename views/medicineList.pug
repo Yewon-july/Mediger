@@ -1,0 +1,31 @@
+doctype html
+html
+    head
+        meta(name="viewpoint" content="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet' href='/main.css')         
+        //- socket 때문에 추가한 부분
+        script(src="/socket.io/socket.io.js")
+        script.
+            var socket = io.connect('http://localhost:2000/add',{
+                path: '/socket.io'
+            });
+            socket.emit("insert", {});
+        style.
+            ul{
+                list-style:none;
+            }
+    body
+        include header.pug
+        .medicineTake 복용 중인 약
+        .listOut
+
+            for schedule in schedules
+                .block
+                    .schedule
+                        .scheduleName
+                            a(href="/medicines/"+`${schedule.scheID}`).a=schedule.scheName
+        
+        form(action='/medicines/addForm' method='GET')
+            input.Rectangle-add(type="submit", value="추가")
+        .footer
+            include footer.pug
