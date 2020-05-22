@@ -1,15 +1,9 @@
 # Prototype
 
-- [link](https://xd.adobe.com/view/e5818e01-8184-4624-6c8b-fdb994792645-93b0/)
+- NUGU Speaker을 사용한 Mediger의 데모 영상입니다. [link](https://youtu.be/kT_0jlII8BA)
+- Mediger의  프로토타입입니다. [link](https://www.youtube.com/watch?v=55gceGWeCUU&feature=youtu.be)
 
-# NUGU Play
-
-- NUGU Mediger Play Action Tree
-  ![actionTree](/Users/yewon/Documents/LightIsLed/Document/image/actionTree.jpg)
-- NUGU Mediger Test mode in Youtube [link](https://youtu.be/kT_0jlII8BA)
-- 
-
-# Frontend - app
+# Mockup
 
 - Frontend : [README.md](https://github.com/LightIsLED/Front)
 - 주요 라이브러리 :`React`, `apollo`, `graphql`
@@ -36,67 +30,6 @@
 ![4  Profile - empty protector](https://user-images.githubusercontent.com/26773073/69350760-75078200-0cbd-11ea-9d7b-0d25fc540a58.png)
 
 
-# Document
-
-- template : [IEEE paper template](https://www.ieee.org/conferences/publishing/templates.html)
-- language : `latex`
-- editor : `overleaf` [link](https://www.overleaf.com/project/5d847a744791900001944401)
-
-## 0. schedule
-
-|             Milestone              |                          Submission                          |       Due Date        |
-| :--------------------------------: | :----------------------------------------------------------: | :-------------------: |
-|        Requirement Analysis        |               A. Proposal/Requirement document               | *Sept. 27 and Oct. 4* |
-|           Specification            | B. Specification document<br />structured system/object-oriented<br/>analysis |                       |
-|               Design               |         C. Design document<br />architecture design          |                       |
-| Implementation and<br/>Integration | D. Implementation<br />Source code, testing, USE CASES<br/>Demo |                       |
-|      Final Paper/Source Code       |     E. Presentation, User guide<br />INSTALLATION guide      |                       |
-
-
-## 1. Requirement Analysis
-
-- Paper Title : project title
-- Authors : members, group name
-- Abstract : summary of project proposal
-- Role Assignments (till the middle of the term): Roles, Name, Task description and etc.
-- I. Introduction
-  your motivation, problem statement (client’s needs),
-  research on any related software
-- II. Requirements
-  A. Requirement 1
-  B. Requirement 2
-
-
-
-# Proxy-NUGU 
-
-- TODO List
-    - [X] `Ask-MedicineList`
-    - [X] `Ask-whatToTake`
-    - [X] `Change-medicationInfo`
-    - [X] `Check-MedicineTaken`
-    - [X] `Delete-MedicationInfo`
-    - [X] `Input-MedicationInfo`
-
-- UPDATE
-    1. 타임존 에러를 해결하기 위해 `moment-timezone`,  `moment`를 설치함.
-        ```
-        npm install moment-timezone
-        ```
-        ```
-        npm install moment
-        ```
-
-- Trigger별로 Controller 나눔
-    1. `Ask-MedicineList`
-    2. `Ask-whatToTake`
-    3. `Change-medicationInfo`
-    4. `Check-MedicineToTake`
-    5. `Check-MedicineTaken`
-    6. `Delete-MedicationInfo`
-    7. `Input-MedicationInfo`
-
-- ACTION 이름으로 Backend Proxy가 전달되기때문에, router을 쪼갤 수가 없어서 `/routes/index.js`에 모두 나열된 후, 각 트리거별로 Controller에 전달됨.
 
 # Backend
 
@@ -190,3 +123,10 @@
     - 보호자 정보 수정 후에는 보호자 정보가 표시 됨.
 
 
+
+# NUGU Play
+
+- NUGU Mediger Play Action Tree
+  ![actionTree](/Users/yewon/Documents/LightIsLed/Document/image/actionTree.jpg)
+
+# 
